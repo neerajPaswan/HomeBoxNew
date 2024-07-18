@@ -41,6 +41,9 @@ app.use(cors({
 
 app.use('/auth',authRoutes);
 app.use('/product',productRoutes)
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("./",  'dist', 'index.html'));
+});
 
 
 //specifying port for server
